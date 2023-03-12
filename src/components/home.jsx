@@ -38,6 +38,12 @@ export default function Home() {
 
     }
     
+    const DeleteCounter=()=>{
+        if(counter > 0){
+            setCounter(counter - 1);
+            setNewData(newData.slice(0, newData.length - 1));
+        }
+    }
     const [newData, setNewData] = React.useState([]);
     return (
 
@@ -45,10 +51,15 @@ export default function Home() {
             <h2>
                 Home
             </h2>
-            <button onClick={addCounter}>
+           <div className="buttons">
+           <button onClick={addCounter}>
                 Add Card
             </button>
-
+            
+            <button onClick={DeleteCounter}>
+                Delete Card
+            </button>
+           </div>
             <h2>
                 Current Cards: {counter}
             </h2>

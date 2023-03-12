@@ -19,10 +19,21 @@
   height: 8px;
   width: 8px;
   border-radius: 100%;
-  
   margin-left: 1px;
   margin-right: 1px;
+  animation: jump infinite 1s alternate;
 }
+
+@keyframes jump{
+  from{
+    transform: translateY(10px);
+  }
+  to{
+    transform: translateY(0px);
+  }
+}
+
+
 
 .dottedContainer{
   display: flex;
@@ -31,8 +42,18 @@
   align-items: center;
   margin: 10px auto;
   padding: 0px 600px;
+  animation: rot infinite 2s alternate-reverse;
 
 }
+@keyframes rot{
+  from{
+    transform: RotateY(0deg);
+  }
+  to{
+    transform: RotateY(45deg);
+  }
+}
+
 
 ul{
   list-style-type: none;
@@ -131,3 +152,28 @@ ul{
 
 
 
+.Page404{
+  text-align: center;
+  padding: 30px;
+  background-color: #f5f5f5;
+}
+
+
+.Page404 p{
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 0;
+  color:#66347F;
+}
+.Page404 a{
+  text-decoration: none;
+}
+
+div .buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0px 450px;
+
+}

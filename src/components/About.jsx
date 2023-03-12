@@ -1,9 +1,11 @@
 import React ,{useEffect}from 'react'
+// import {useNavigate} from 'react-router-dom'
 import '../App.css'
 import '../card.css'
 
 export default function About() {
-
+    // const navigator=useNavigate();
+    // navigator.push('/about');
     // we can also make our custom Error Handler
     // error for custom error message and message for ux 
     // const [error, setError] = React.useState(null);
@@ -18,11 +20,11 @@ export default function About() {
     // so we can maintain our code easily in one place
     // just create a file for custom hooks and import it in all components
     // and use it
+    // 2. we can also use abort Controller here to prevent a bug from happening : trying to fetch the data a certain page when we moved to other one    
     useEffect(() => {
         fetch("https://dummyjson.com/users").then((response) => {
             return response.json();
         }).then((Newdata) => {
-           
             setData(Newdata["users"])
         }).catch((err) => {
             console.log(err.message);
@@ -35,7 +37,7 @@ export default function About() {
             <h2>Content</h2>
             <button onClick={
                 ()=>{setShown(!Shown)}
-            }>Show Data</button>
+            }>{Shown ? "Hide" : "Show" } Data</button>
           {
                 Shown ?   
                 <ul className='DataList'>
@@ -70,7 +72,7 @@ export default function About() {
             <div className="dotted"></div>
             <div className="dotted"></div>
             <div className="dotted"></div>
-            </div>
+            </div>  
 
           }
         </div>
@@ -78,3 +80,5 @@ export default function About() {
     </div>
   )
 }
+
+
